@@ -1,4 +1,4 @@
-Jihed Lourassi:
-Jyhed Horcheni
-Saih Hlaimi:
-Elyess ben Sassi:
+Jihed Lourassi: Interface Paiement / Produit Plus demander
+Jyhed Horchani:: Interface Configuration/Review
+Saih Hlaimi:details Produit/Participation au chalenge
+Elyess ben Sassi:Calendrier/differents Events
