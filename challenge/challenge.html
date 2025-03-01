@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Challenge - Regen Electronics</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .icon-circle {
+      background-color: #34d399;
+      border-radius: 50%;
+      padding: 8px;
+    }
+    .bg-custom-green {
+      background-color: rgb(22, 182, 122);
+    }
+    .bg-newsletter-light {
+      background-color: rgb(30, 200, 140);
+    }
+    .bg-footer-dark {
+      background-color: rgb(18, 150, 100);
+    }
+    .logo-placeholder {
+      width: 90px;
+      height: 70px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .logo-placeholder img {
+      width: 100%;
+      height: 226%;
+      object-fit: cover; 
+      border-radius: 50%; 
+    }
+    @media (max-width: 767px) {
+      header {
+        padding: 16px 24px; 
+      }
+      section {
+        padding: 16px; 
+      }
+      .mobile-nav {
+        padding: 12px 24px; 
+      }
+    }
+  </style>
+</head>
+<body class="bg-gray-100 font-sans">
+  <header class="bg-custom-green text-white p-4 flex justify-between items-center">
+    <div class="flex items-center space-x-3">
+      <div class="logo-placeholder">
+        <img src="./e10280e9-d647-484d-a665-a5c3fc951932_removalai_preview (1).png" alt="Logo">
+      </div> 
+    </div>
+    <nav class="space-x-4 hidden md:flex">
+      <a href="#" class="hover:underline" style="color: black;font-weight: bold;">Home</a>
+      <a href="#" class="hover:underline" style="color: black;font-weight: bold;">Produit</a>
+      <a href="#" class="hover:underline" style="color: black;font-weight: bold;">Statistique</a>
+      <a href="#" class="hover:underline" style="color: black;font-weight: bold;">Contact</a>
+    </nav>
+    <div class="space-x-2 hidden md:flex">
+      <button class="bg-green-600 px-4 py-2 rounded">Connexion</button>
+      <button class="bg-white text-teal-500 px-4 py-2 rounded">Inscription</button>
+    </div>
+    <div class="md:hidden">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+      </svg>
+    </div>
+  </header>
+
+  <div class="container mx-auto mt-4 text-sm text-gray-600 flex items-center">
+    <span>Challenge</span>
+    <span class="mx-2">></span>
+    <span class="text-teal-500">Détail du challenge</span>
+    <div class="ml-auto md:hidden">
+      <span class="text-gray-600">Participation au challenge!</span>
+    </div>
+  </div>
+
+  <section class="container mx-auto mt-8 flex flex-col md:flex-row gap-8">
+    <div class="md:w-1/2 bg-teal-100 p-4 rounded-lg flex justify-center items-center relative">
+      <img src="./trophy.png" alt="Challenge Trophy" class="w-full max-w-md rounded-lg">
+      <span class="absolute top-4 right-4 bg-pink-500 text-white px-3 py-1 rounded-full">NEW</span>
+    </div>
+    <div class="md:w-1/2">
+      <h1 class="text-3xl font-bold text-gray-800">Challenge pour gagner un produit gratuit selon votre choix</h1>
+      <p class="mt-2 text-gray-600">Date : 5 février 2025</p>
+      <p class="mt-2 text-gray-600">
+        Ne manquez pas notre challenge exclusif où chacun repart avec un produit gratuit de son choix ! Inscrivez-vous maintenant pour tenter votre chance et découvrir une expérience inoubliable. Nous vous attendons nombreux !
+      </p>
+    </div>
+  </section>
+
+  <section class="container mx-auto mt-12 text-center">
+    <p class="text-gray-600 max-w-2xl mx-auto">
+      "Allez-vous I ne perdez pas cette opportunité d’être pour gagner n’importe quel chose selon votre choix Gamer ! rejoigner vous en cliquant sur le bouton ci-dessous !"
+    </p>
+    <button class="mt-6 bg-green-600 text-white px-6 py-3 rounded">Register now!</button>
+  </section>
+
+  <footer class="bg-custom-green text-white mt-12">
+    <div class="bg-newsletter-light py-8">
+      <div class="container mx-auto text-center">
+        <h3 class="text-xl font-bold">Rejoignez la communauté shopping pour obtenir une promo mensuel</h3>
+        <div class="mt-4 flex flex-col md:flex-row justify-center gap-2">
+          <input type="email" placeholder="Ajoutez votre email ici" class="p-2 rounded w-full md:w-64">
+          <button class="bg-gray-800 text-white px-4 py-2 rounded mt-2 md:mt-0">Soumettre</button>
+        </div>
+      </div>
+    </div>
+    <div class="bg-footer-dark py-8">
+      <div class="container mx-auto text-center">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-4 text-sm">
+          <div>
+            <h4 class="font-bold">Regen Electronics</h4>
+            <p>Notre mission : rendre la tech accessible à tous pour des expériences abordables.</p>
+          </div>
+          <div>
+            <h4 class="font-bold">Company</h4>
+            <p><a href="#" class="hover:underline">About</a></p>
+            <p><a href="#" class="hover:underline">Contact us</a></p>
+            <p><a href="#" class="hover:underline">Careers</a></p>
+          </div>
+          <div>
+            <h4 class="font-bold">Support</h4>
+            <p><a href="#" class="hover:underline">Localisation</a></p>
+            <p><a href="#" class="hover:underline">Support technique</a></p>
+            <p><a href="#" class="hover:underline">FAQ</a></p>
+          </div>
+          <div>
+            <h4 class="font-bold">Legal</h4>
+            <p><a href="#" class="hover:underline">Conditions générales</a></p>
+            <p><a href="#" class="hover:underline">Politique de confidentialité</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <div class="fixed bottom-0 left-0 w-full bg-custom-green text-white py-2 md:hidden mobile-nav">
+    <div class="flex justify-around">
+      <a href="#" class="flex flex-col items-center">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
+        </svg>
+        <span class="text-xs">Accueil</span>
+      </a>
+      <a href="#" class="flex flex-col items-center">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h18M3 9h18M3 15h18M3 21h18"></path>
+        </svg>
+        <span class="text-xs">Produit</span>
+      </a>
+      <a href="#" class="flex flex-col items-center">
+        <div class="icon-circle">
+            <img src="./customer-service (1).png" alt="Icône de service client" class="w-6 h-6">
+          </div>
+      </a>
+      <a href="#" class="flex flex-col items-center">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+        </svg>
+        <span class="text-xs">Calendrier</span>
+      </a>
+      <a href="#" class="flex flex-col items-center">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2V9"></path>
+        </svg>
+        <span class="text-xs">Statistiques</span>
+      </a>
+    </div>
+  </div>
+</body>
+</html>
