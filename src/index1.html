@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="fr" class="h-full">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ReGen Electronics - Paiement</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#20c997',
+            success: '#28a745',
+          }
+        }
+      }
+    }
+  </script>
+  <style type="text/tailwindcss">
+    @layer utilities {
+      .checkout-progress {
+        @apply flex items-center justify-between w-full max-w-3xl mx-auto my-8;
+      }
+      .checkout-step {
+        @apply flex flex-col items-center;
+      }
+      .checkout-line {
+        @apply flex-1 h-0.5 bg-[#20c997];
+      }
+      .step-icon {
+        @apply w-12 h-12 flex items-center justify-center text-[#20c997];
+      }
+      .step-active {
+        @apply border-2 border-[#20c997] p-2 rounded-md;
+      }
+      .check-icon {
+        @apply text-[#28a745] w-6 h-6;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="fixed inset-0 overflow-hidden pointer-events-none z-0">
+    <div class="absolute top-0 right-0 w-full h-full">
+      <svg viewBox="0 0 1000 1000" class="w-full h-full opacity-30">
+        <path d="M0,500 Q250,400 500,500 T1000,500" fill="none" stroke="white" stroke-width="2"/>
+        <path d="M0,300 Q250,200 500,300 T1000,300" fill="none" stroke="white" stroke-width="2"/>
+        <path d="M0,700 Q250,600 500,700 T1000,700" fill="none" stroke="white" stroke-width="2"/>
+        <path d="M0,900 Q250,800 500,900 T1000,900" fill="none" stroke="white" stroke-width="2"/>
+      </svg>
+    </div>
+  </div>
+
+  <div class="relative z-10 flex-grow flex flex-col w-full">
+    <div class="bg-primary rounded-lg overflow-hidden shadow-xl flex-grow flex flex-col">
+      <header class="bg-primary p-4">
+        <div class="flex flex-col sm:flex-row items-center justify-between">
+          <div class="flex items-center w-full sm:w-auto justify-between">
+            <div class="w-16 h-16 sm:w-24 sm:h-24 relative">
+              <img src="b.png" alt="ReGen Electronics Logo" class="object-contain w-full h-full"/>
+            </div>
+            <button id="mobile-menu-button" class="sm:hidden text-black p-2">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+              </svg>
+            </button>
+          </div>
+          
+          <nav class="hidden sm:flex mt-4 sm:mt-0">
+            <ul class="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-6">
+              <li><a href="#" class="text-black font-medium">Home</a></li>
+              <li><a href="#" class="text-success">Produit</a></li>
+              <li><a href="#" class="text-black font-medium">Statistique</a></li>
+              <li><a href="#" class="text-black font-medium">Calendrier</a></li>
+              <li><a href="#" class="text-black font-medium">Contact</a></li>
+            </ul>
+          </nav>
+          
+          <div class="flex items-center space-x-3 mt-4 sm:mt-0">
+            <button class="bg-success text-white px-4 py-2 rounded text-sm">Connexion</button>
+            <button class="bg-white text-success px-4 py-2 rounded border border-success text-sm">Inscription</button>
+          </div>
+        </div>
+      </header>
+      
+      <div id="mobile-menu" class="sm:hidden bg-primary p-4 border-t border-black/20 hidden">
+        <ul class="flex flex-col space-y-2">
+          <li><a href="#" class="text-black font-medium block py-2">Home</a></li>
+          <li><a href="#" class="text-black/70 font-medium block py-2">Produit</a></li>
+          <li><a href="#" class="text-black font-medium block py-2">Statistique</a></li>
+          <li><a href="#" class="text-black font-medium block py-2">Calendrier</a></li>
+          <li><a href="#" class="text-black font-medium block py-2">Contact</a></li>
+        </ul>
+      </div>
+
+      <main class="bg-white flex-grow p-4 md:p-6">
+        <div class="container mx-auto">
+          <div class="fixed top-20 right-4 md:right-8 z-50">
+            <div class="bg-[#28a745] rounded-full p-4">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 md:h-8 md:w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z" />
+              </svg>
+            </div>
+          </div>
+          
+          <div class="flex items-center mb-8">
+            <div class="w-16 md:w-32 h-2 bg-[#28a745] rounded-full mr-4"></div>
+            <h2 class="text-lg md:text-xl">
+              <span class="text-[#28a745]">Produit</span> - 
+              <span class="text-[#28a745]">Tous les Produits</span> - 
+              <span class="text-[#28a745]">Selectionner Produits</span> - 
+              <span class="text-[#28a745] font-bold">Livrer</span>
+            </h2>
+          </div>
+          
+          <div class="checkout-progress">
+            <div class="checkout-step">
+              <div class="step-icon">
+                <img src="w3.png" alt="Visa" class="h-11" />
+              </div>
+              <p class="mt-2 text-center text-sm md:text-base">panier</p>
+            </div>
+            
+            <div class="checkout-line"></div>
+            
+            <div class="checkout-step">
+              <div class="step-icon">
+                <img src="w4.png" alt="Visa" class="h-11" />
+              </div>
+              <p class="mt-2 text-center text-sm md:text-base">Adresse</p>
+            </div>
+            
+            <div class="checkout-line"></div>
+            
+            <div class="checkout-step">
+              <div class="step-icon step-active">
+                <img src="w2.png" alt="Visa" class="h-11" />
+              </div>
+              <p class="text-success">Paiement</p>
+            </div>
+            
+            <div class="checkout-line"></div>
+            
+            <div class="checkout-step">
+              <div class="step-icon">
+                <img src="w1.png" alt="Visa" class="h-11" />
+              </div>
+              <p class="mt-2 text-center text-sm md:text-base">Aperçu</p>
+            </div>
+          </div>
+          
+          <div class="bg-gray-100 p-4 md:p-8 rounded-lg max-w-3xl mx-auto mt-8">
+            <form>
+              <div class="mb-6">
+                <label for="nom" class="block mb-2 font-medium">Nom :</label>
+                <div class="flex items-center">
+                  <input type="text" id="nom" value="Jihed" class="w-full p-3 border rounded-md" />
+                  <svg xmlns="http://www.w3.org/2000/svg" class="check-icon ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                  </svg>
+                </div>
+              </div>
+              
+              <div class="mb-6">
+                <label for="prenom" class="block mb-2 font-medium">Prenom :</label>
+                <div class="flex items-center">
+                  <input type="text" id="prenom" value="Jihed" class="w-full p-3 border rounded-md" />
+                  <svg xmlns="http://www.w3.org/2000/svg" class="check-icon ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                  </svg>
+                </div>
+              </div>
+              
+              <div class="mb-6">
+                <label for="carte" class="block mb-2 font-medium">Numéro Carte :</label>
+                <div class="flex items-center">
+                  <div class="relative w-full">
+                    <input type="text" id="carte" value="1234 1234 1234 1234" class="w-full p-3 border rounded-md" />
+                    <div class="absolute right-3 top-1/2 transform -translate-y-1/2 flex space-x-1">
+                      <img src="pp.png" alt="Visa" class="h-9" />
+                    </div>
+                  </div>
+                  <svg xmlns="http://www.w3.org/2000/svg" class="check-icon ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                  </svg>
+                </div>
+              </div>
+              
+              <div class="flex flex-wrap -mx-2 mb-6">
+                <div class="w-full md:w-1/2 px-2 mb-4 md:mb-0">
+                  <label for="expiration" class="block mb-2 font-medium">Date Expiration :</label>
+                  <input type="text" id="expiration" value="Jihed" class="w-full p-3 border rounded-md" />
+                </div>
+                
+                <div class="w-full md:w-1/2 px-2">
+                  <label for="cvc" class="block mb-2 font-medium">CVC :</label>
+                  <div class="flex items-center">
+                    <input type="text" id="cvc" value="Jihed" class="w-full p-3 border rounded-md" />
+                    <svg xmlns="http://www.w3.org/2000/svg" class="check-icon ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+              
+              <button type="submit" class="w-full bg-[#28a745] text-white py-4 rounded-md text-lg font-medium mt-4">
+                Confirmer
+              </button>
+            </form>
+          </div>
+        </div>
+      </main>
+      
+      <div class="bg-[#20c997] py-8 px-4 text-center">
+        <div class="container mx-auto">
+          <h2 class="text-white text-xl md:text-2xl font-bold mb-4">
+            REJOIGNEZ LA COMMUNAUTÉ SHOPPING POUR OBTENIR UNE PROMO MENSUEL
+          </h2>
+          <div class="flex max-w-md mx-auto">
+            <input
+              type="email"
+              placeholder="Ajoutez votre email ici"
+              class="flex-1 px-4 py-2 rounded-l-md"
+            />
+            <button class="bg-[#28a745] text-white px-4 py-2 rounded-r-md uppercase text-sm">
+              Soumettre
+            </button>
+          </div>
+        </div>
+      </div>
+      
+      <footer class="bg-[#008066] text-white p-4 md:p-8">
+        <div class="container mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
+          <div>
+            <h3 class="text-xl font-bold mb-2">ReGen Electronics</h3>
+            <p class="text-sm mb-2">Notre mission:</p>
+            <p class="text-sm text-white/80">
+              Rendre les appareils de qualité accessibles à des prix abordables
+            </p>
+          </div>
+
+          <div>
+            <h3 class="text-black font-medium">Company</h3>
+            <ul class="space-y-1 text-sm">
+              <li><a href="#" class="hover:underline">About</a></li>
+              <li><a href="#" class="hover:underline">Localisation</a></li>
+              <li><a href="#" class="hover:underline">Contact us</a></li>
+              <li><a href="#" class="hover:underline">Support</a></li>
+              <li><a href="#" class="hover:underline">Careers</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 class="text-black font-medium">Fonctionnalités</h3>
+            <ul class="space-y-1 text-sm">
+              <li><a href="#" class="hover:underline">Suivi des commandes</a></li>
+              <li><a href="#" class="hover:underline">Size Guide</a></li>
+              <li><a href="#" class="hover:underline">FAQs</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 class="text-black font-medium">Legal</h3>
+            <ul class="space-y-1 text-sm">
+              <li><a href="#" class="hover:underline">Conditions générales</a></li>
+              <li><a href="#" class="hover:underline">Politique de confidentialité</a></li>
+            </ul>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const mobileMenuButton = document.getElementById('mobile-menu-button');
+      const mobileMenu = document.getElementById('mobile-menu');
+      
+      mobileMenuButton.addEventListener('click', function() {
+        mobileMenu.classList.toggle('hidden');
+      });
+    });
+  </script>
+</body>
+</html>
+
