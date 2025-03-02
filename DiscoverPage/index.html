@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@900&family=AR+One+Sans:wght@400;700&family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Landing Page</title>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      /* Custom colors */
+      :root {
+        --primary: #20c997;
+        --primary-dark: #14a479;
+        --button-green: #28a745;
+        --text-dark: #242323;
+        --text-light: #fefefe;
+      }
+      .bg-primary {
+        background-color: var(--primary);
+      }
+      .bg-primary-dark {
+        background-color: var(--primary-dark);
+      }
+      .bg-button-green {
+        background-color: var(--button-green);
+      }
+      .border-button-green {
+        border-color: var(--button-green);
+      }
+      .text-custom-dark {
+        color: var(--text-dark);
+      }
+      .text-custom-light {
+        color: var(--text-light);
+      }
+      .text-button-green {
+        color: var(--button-green);
+      }
+
+      /* Dropdown styles */
+      .dropdown {
+        position: relative;
+        display: inline-block;
+      }
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: white;
+        min-width: 200px;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+        border-radius: 0.25rem;
+      }
+      .dropdown:hover .dropdown-content {
+        display: block;
+      }
+
+      /* Promo badge */
+      .promo-badge {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        background-color: red;
+        color: white;
+        padding: 5px 10px;
+        border-radius: 5px;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body class="font-sans">
+    <!-- Navbar -->
+    <nav class="bg-primary shadow-lg">
+      <div class="max-w-6xl mx-auto px-4">
+        <div class="flex justify-between">
+          <div class="flex space-x-4">
+            <!-- Logo -->
+            <div>
+              <a href="#" class="flex items-center py-4 px-2">
+                <img
+                  src="../public/assets/whiteLogoRegen.png"
+                  alt="ReGen Electronics Logo"
+                  class="h-20 mr-2"
+                />
+              </a>
+            </div>
+            <!-- Primary Nav -->
+            <div class="hidden md:flex items-center space-x-8">
+              <a
+                href="#"
+                class="py-4 px-2 text-custom-dark hover:text-gray-500 transition duration-300"
+                style="font-family: 'Poppins', sans-serif; font-weight: 500"
+                >Home</a
+              >
+
+              <!-- Produit Dropdown -->
+              <div class="dropdown py-4 px-2">
+                <span
+                  class="text-custom-dark hover:text-gray-500 cursor-pointer flex items-center"
+                  style="font-family: 'Poppins', sans-serif; font-weight: 500"
+                >
+                  Produit
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-4 w-4 ml-1"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                </span>
+                <div class="dropdown-content mt-4">
+                  <a
+                    href="#"
+                    class="block px-4 py-2 text-custom-dark hover:bg-gray-100"
+                    style="font-family: 'Poppins', sans-serif; font-weight: 500"
+                    >Voir Produits</a
+                  >
+                  <a
+                    href="#"
+                    class="block px-4 py-2 text-custom-dark hover:bg-gray-100"
+                    style="font-family: 'Poppins', sans-serif; font-weight: 500"
+                    >Produits en promotion</a
+                  >
+                </div>
+              </div>
+
+              <a
+                href="#"
+                class="py-4 px-2 text-custom-dark hover:text-gray-500 transition duration-300"
+                style="font-family: 'Poppins', sans-serif; font-weight: 500"
+                >Statistique</a
+              >
+
+              <!-- Calendrier Dropdown -->
+              <div class="dropdown py-4 px-2">
+                <span
+                  class="text-white bg-primary-dark hover:bg-opacity-80 px-3 py-1 rounded-md cursor-pointer flex items-center"
+                  style="font-family: 'Poppins', sans-serif; font-weight: 500"
+                >
+                  Calendrier
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-4 w-4 ml-1"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                </span>
+                <div class="dropdown-content mt-4">
+                  <a
+                    href="#"
+                    class="block px-4 py-2 text-custom-dark hover:bg-gray-100"
+                    style="font-family: 'Poppins', sans-serif; font-weight: 500"
+                    >Calendrier</a
+                  >
+                  <div class="border-b border-gray-200 my-1"></div>
+                  <a
+                    href="#evenements"
+                    class="block px-4 py-2 text-custom-dark hover:bg-gray-100"
+                    style="font-family: 'Poppins', sans-serif; font-weight: 500"
+                    >Événements</a
+                  >
+                  <a
+                    href="#challenges"
+                    class="block px-4 py-2 text-custom-dark hover:bg-gray-100"
+                    style="font-family: 'Poppins', sans-serif; font-weight: 500"
+                    >Challenges</a
+                  >
+                  <div class="border-b border-gray-200 my-1"></div>
+                  <a
+                    href="#"
+                    class="block px-4 py-2 text-custom-dark hover:bg-gray-100"
+                    style="font-family: 'Poppins', sans-serif; font-weight: 500"
+                    >Découvrir</a
+                  >
+                </div>
+              </div>
+
+              <a
+                href="#"
+                class="py-4 px-2 text-custom-dark hover:text-gray-500 transition duration-300"
+                style="font-family: 'Poppins', sans-serif; font-weight: 500"
+                >Contact</a
+              >
+            </div>
+          </div>
+
+          <!-- Secondary Nav -->
+          <div class="hidden md:flex items-center space-x-4">
+            <a
+              href="#"
+              class="py-2 px-4 bg-button-green text-custom-light rounded hover:bg-green-600 transition duration-300"
+              >Connexion</a
+            >
+            <a
+              href="#"
+              class="py-2 px-4 border bg-white border-button-green text-button-green rounded hover:bg-gray-100 transition duration-300"
+              >Inscription</a
+            >
+          </div>
+
+          <!-- Mobile menu button -->
+          <div class="md:hidden flex items-center">
+            <button class="outline-none mobile-menu-button">
+              <svg
+                class="w-6 h-6 text-custom-dark hover:text-gray-500"
+                fill="none"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path d="M4 6h16M4 12h16M4 18h16"></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="max-w-6xl mx-auto px-4 py-8">
+      <!-- Événements Section -->
+      <section id="evenements" class="my-16">
+        <h2 class="text-3xl font-bold text-custom-dark mb-8">Événements</h2>
+        <div class="grid md:grid-cols-3 gap-8">
+          <!-- Card 1 -->
+          <div class="bg-white rounded-lg shadow-md overflow-hidden">
+            <div class="relative">
+              <img
+                src="/api/placeholder/400/250"
+                alt="Event"
+                class="w-full h-48 object-cover"
+              />
+              <div class="p-4">
+                <p class="text-sm text-gray-500 mb-1">15 Mar 2025 • 14:00</p>
+                <h3 class="text-xl font-semibold text-custom-dark mb-2">
+                  La Quinzaine de l’Innovation
+                </h3>
+                <p class="text-gray-600 mb-3">
+                  est un événement incontournable dédié aux dernières avancées
+                  technologiques. Pendant deux semaines, profitez d’offres
+                  exclusives sur les app...
+                </p>
+                <a href="#" class="text-button-green underline">Voir plus</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="bg-white rounded-lg shadow-md overflow-hidden">
+            <div class="relative">
+              <img
+                src="/api/placeholder/400/250"
+                alt="Event"
+                class="w-full h-48 object-cover"
+              />
+              <div class="p-4">
+                <p class="text-sm text-gray-500 mb-1">22 Mar 2025 • 09:30</p>
+                <h3 class="text-xl font-semibold text-custom-dark mb-2">
+                  Conférence Design
+                </h3>
+                <p class="text-gray-600 mb-3">
+                  A conference dedicated to modern design principles and UI/UX
+                  innovations.
+                </p>
+                <a href="#" class="text-button-green underline">Voir plus</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="bg-white rounded-lg shadow-md overflow-hidden">
+            <div class="relative">
+              <img
+                src="/api/placeholder/400/250"
+                alt="Event"
+                class="w-full h-48 object-cover"
+              />
+              <div class="p-4">
+                <p class="text-sm text-gray-500 mb-1">28 Mar 2025 • 18:00</p>
+                <h3 class="text-xl font-semibold text-custom-dark mb-2">
+                  Soirée Networking
+                </h3>
+                <p class="text-gray-600 mb-3">
+                  Connect with professionals and expand your network at our
+                  exclusive event.
+                </p>
+                <a href="#" class="text-button-green underline">Voir plus</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Challenges Section -->
+      <section id="challenges" class="my-16">
+        <h2 class="text-3xl font-bold text-custom-dark mb-8">Challenges</h2>
+        <div class="grid md:grid-cols-3 gap-8">
+          <!-- Challenge 1 -->
+          <div class="bg-white rounded-lg shadow-md overflow-hidden">
+            <div class="relative">
+              <img
+                src="/api/placeholder/400/250"
+                alt="Challenge"
+                class="w-full h-48 object-cover"
+              />
+              <div class="p-4">
+                <p class="text-sm text-gray-500 mb-1">10-20 Mar 2025</p>
+                <h3 class="text-xl font-semibold text-custom-dark mb-2">
+                  Coding Challenge
+                </h3>
+                <p class="text-gray-600 mb-3">
+                  Test your programming skills and compete with other developers
+                  for exciting prizes.
+                </p>
+                <a href="#" class="text-button-green underline">Voir plus</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Challenge 2 -->
+          <div class="bg-white rounded-lg shadow-md overflow-hidden">
+            <div class="relative">
+              <img
+                src="/api/placeholder/400/250"
+                alt="Challenge"
+                class="w-full h-48 object-cover"
+              />
+              <div class="p-4">
+                <p class="text-sm text-gray-500 mb-1">15-30 Mar 2025</p>
+                <h3 class="text-xl font-semibold text-custom-dark mb-2">
+                  UI Design Challenge
+                </h3>
+                <p class="text-gray-600 mb-3">
+                  Showcase your design skills and create innovative user
+                  interfaces.
+                </p>
+                <a href="#" class="text-button-green underline">Voir plus</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Challenge 3 -->
+          <div class="bg-white rounded-lg shadow-md overflow-hidden">
+            <div class="relative">
+              <img
+                src="/api/placeholder/400/250"
+                alt="Challenge"
+                class="w-full h-48 object-cover"
+              />
+              <div class="p-4">
+                <p class="text-sm text-gray-500 mb-1">1-15 Apr 2025</p>
+                <h3 class="text-xl font-semibold text-custom-dark mb-2">
+                  Marketing Challenge
+                </h3>
+                <p class="text-gray-600 mb-3">
+                  Develop innovative marketing strategies and present your ideas
+                  to industry experts.
+                </p>
+                <a href="#" class="text-button-green underline">Voir plus</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Promotions Section -->
+      <section id="promotions" class="my-16">
+        <h2 class="text-3xl font-bold text-custom-dark mb-8">Promotions</h2>
+        <div class="grid md:grid-cols-3 gap-8">
+          <!-- Product 1 -->
+          <div class="bg-white rounded-lg shadow-md overflow-hidden">
+            <div class="relative">
+              <img
+                src="/api/placeholder/400/300"
+                alt="Product"
+                class="w-full h-64 object-cover"
+              />
+              <div class="promo-badge">-30%</div>
+              <div class="p-4">
+                <h3 class="text-xl font-semibold text-custom-dark mb-2">
+                  Premium Laptop
+                </h3>
+                <p class="text-gray-600 mb-3">
+                  High-performance laptop for professionals.
+                </p>
+                <div class="flex space-x-3">
+                  <a
+                    href="#"
+                    class="py-2 px-4 bg-button-green text-custom-light rounded text-sm hover:bg-green-600 transition duration-300"
+                    >Ajouter au panier</a
+                  >
+                  <a
+                    href="#"
+                    class="py-2 px-4 border border-button-green text-button-green rounded text-sm hover:bg-gray-100 transition duration-300"
+                    >Détails produits</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Product 2 -->
+          <div class="bg-white rounded-lg shadow-md overflow-hidden">
+            <div class="relative">
+              <img
+                src="/api/placeholder/400/300"
+                alt="Product"
+                class="w-full h-64 object-cover"
+              />
+              <div class="promo-badge">-25%</div>
+              <div class="p-4">
+                <h3 class="text-xl font-semibold text-custom-dark mb-2">
+                  Wireless Headphones
+                </h3>
+                <p class="text-gray-600 mb-3">
+                  Noise-cancelling headphones with premium sound quality.
+                </p>
+                <div class="flex space-x-3">
+                  <a
+                    href="#"
+                    class="py-2 px-4 bg-button-green text-custom-light rounded text-sm hover:bg-green-600 transition duration-300"
+                    >Ajouter au panier</a
+                  >
+                  <a
+                    href="#"
+                    class="py-2 px-4 border border-button-green text-button-green rounded text-sm hover:bg-gray-100 transition duration-300"
+                    >Détails produits</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Product 3 -->
+          <div class="bg-white rounded-lg shadow-md overflow-hidden">
+            <div class="relative">
+              <img
+                src="/api/placeholder/400/300"
+                alt="Product"
+                class="w-full h-64 object-cover"
+              />
+              <div class="promo-badge">-40%</div>
+              <div class="p-4">
+                <h3 class="text-xl font-semibold text-custom-dark mb-2">
+                  Smart Watch
+                </h3>
+                <p class="text-gray-600 mb-3">
+                  Advanced smartwatch with health tracking features.
+                </p>
+                <div class="flex space-x-3">
+                  <a
+                    href="#"
+                    class="py-2 px-4 bg-button-green text-custom-light rounded text-sm hover:bg-green-600 transition duration-300"
+                    >Ajouter au panier</a
+                  >
+                  <a
+                    href="#"
+                    class="py-2 px-4 border border-button-green text-button-green rounded text-sm hover:bg-gray-100 transition duration-300"
+                    >Détails produits</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+      <!-- Upper footer section -->
+      <div class="bg-primary py-8">
+        <div class="max-w-6xl mx-auto px-4">
+          <div class="flex flex-col items-center text-center">
+            <h3
+              class="text-xl font-bold text-custom-light mb-6 font-poppins"
+              style="font-family: 'Poppins', sans-serif; font-weight: 900"
+            >
+              <div>REJOIGNEZ LA COMMUNAUTÉ SHOPPING POUR OBTENIR</div>
+              <div>UNE PROMO MENSUEL</div>
+            </h3>
+            <div class="relative w-full max-w-md">
+              <input
+                type="email"
+                placeholder="Ajoutez votre email ici"
+                class="w-full py-3 px-4 pr-24 bg-white rounded-md text-gray-700 placeholder-gray-400 focus:outline-none"
+              />
+              <button
+                type="submit"
+                class="absolute right-1 top-1 bottom-1 px-3 py-2 bg-primary text-white rounded-r-md text-sm"
+              >
+                Soumettre
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Lower footer section -->
+      <div class="bg-primary-dark py-6">
+        <div class="max-w-6xl mx-auto px-4">
+          <div class="flex flex-col md:flex-row justify-between">
+            <!-- Left side -->
+            <div class="mb-6 md:mb-0">
+              <h2
+                class="text-2xl text-white mb-2"
+                style="font-family: 'Poppins', sans-serif; font-weight: 900"
+              >
+                ReGen Electronics
+              </h2>
+              <h3
+                class="text-base text-white mb-1"
+                style="font-family: 'AR One Sans', sans-serif; font-weight: 700"
+              >
+                Notre mission:
+              </h3>
+              <p
+                class="text-xs text-white"
+                style="font-family: 'AR One Sans', sans-serif; font-weight: 400"
+              >
+                Rendre les appareils de qualité accessibles à des prix
+                abordables
+              </p>
+            </div>
+
+            <!-- Right side with three columns -->
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+              <!-- Column 1 -->
+              <div>
+                <h4
+                  class="text-sm font-bold mb-3 text-black"
+                  style="font-family: 'Roboto', sans-serif"
+                >
+                  Company
+                </h4>
+                <ul
+                  class="space-y-2"
+                  style="font-family: 'Roboto', sans-serif; font-size: 13px"
+                >
+                  <li>
+                    <a href="#" class="text-white hover:underline">About</a>
+                  </li>
+                  <li>
+                    <a href="#" class="text-white hover:underline"
+                      >Contact Us</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#" class="text-white hover:underline">Support</a>
+                  </li>
+                  <li>
+                    <a href="#" class="text-white hover:underline">Careers</a>
+                  </li>
+                </ul>
+              </div>
+
+              <!-- Column 2 -->
+              <div>
+                <h4
+                  class="text-sm font-bold mb-3 text-black"
+                  style="font-family: 'Roboto', sans-serif"
+                >
+                  Fonctionnalités
+                </h4>
+                <ul
+                  class="space-y-2"
+                  style="font-family: 'Roboto', sans-serif; font-size: 13px"
+                >
+                  <li>
+                    <a href="#" class="text-white hover:underline"
+                      >Localisation</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#" class="text-white hover:underline"
+                      >Suivi des commandes</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#" class="text-white hover:underline"
+                      >Size guide</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#" class="text-white hover:underline">FAQs</a>
+                  </li>
+                </ul>
+              </div>
+
+              <!-- Column 3 -->
+              <div>
+                <h4
+                  class="text-sm font-bold mb-3 text-black"
+                  style="font-family: 'Roboto', sans-serif"
+                >
+                  Légal
+                </h4>
+                <ul
+                  class="space-y-2"
+                  style="font-family: 'Roboto', sans-serif; font-size: 13px"
+                >
+                  <li>
+                    <a href="#" class="text-white hover:underline"
+                      >Conditions générales</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#" class="text-white hover:underline"
+                      >Politique de confidentialité</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // Simple script for mobile menu toggle
+      document.addEventListener("DOMContentLoaded", function () {
+        const btn = document.querySelector(".mobile-menu-button");
+        const mobileMenu = document.createElement("div");
+        mobileMenu.className = "mobile-menu hidden md:hidden";
+        mobileMenu.innerHTML = `
+                <ul class="bg-white shadow-lg py-2">
+                    <li><a href="#" class="block py-2 px-4 text-custom-dark hover:bg-gray-100">Home</a></li>
+                    <li><a href="#" class="block py-2 px-4 text-custom-dark hover:bg-gray-100">Produit</a></li>
+                    <li><a href="#" class="block py-2 px-4 text-custom-dark hover:bg-gray-100">Statique</a></li>
+                    <li><a href="#" class="block py-2 px-4 text-custom-dark hover:bg-gray-100">Calendrier</a></li>
+                    <li><a href="#" class="block py-2 px-4 text-custom-dark hover:bg-gray-100">Contact</a></li>
+                    <li><a href="#" class="block py-2 px-4 text-custom-dark hover:bg-gray-100">Connexion</a></li>
+                    <li><a href="#" class="block py-2 px-4 text-custom-dark hover:bg-gray-100">Inscription</a></li>
+                </ul>
+            `;
+        document.querySelector("nav").after(mobileMenu);
+
+        btn.addEventListener("click", function () {
+          mobileMenu.classList.toggle("hidden");
+        });
+      });
+    </script>
+  </body>
+</html>
