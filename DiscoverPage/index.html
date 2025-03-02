@@ -11,6 +11,10 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@900&family=AR+One+Sans:wght@400;700&family=Roboto:wght@400;700&display=swap"
       rel="stylesheet"
     />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
     <title>Landing Page</title>
     <link
       href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css"
@@ -243,7 +247,14 @@
     <main class="max-w-6xl mx-auto px-4 py-8">
       <!-- Événements Section -->
       <section id="evenements" class="my-16">
-        <h2 class="text-3xl font-bold text-custom-dark mb-8">Événements</h2>
+        <div class="flex items-center mb-8">
+          <img
+            src="../public/assets/elements/vector_icon.png"
+            alt="Icone Promotions"
+            class="w-17 mr-2"
+          />
+          <h2 class="text-3xl font-bold text-custom-dark">Événements</h2>
+        </div>
         <div class="grid md:grid-cols-3 gap-8">
           <!-- Card 1 -->
           <div class="bg-white rounded-lg shadow-md overflow-hidden">
@@ -260,8 +271,7 @@
                 </h3>
                 <p class="text-gray-600 mb-3">
                   est un événement incontournable dédié aux dernières avancées
-                  technologiques. Pendant deux semaines, profitez d’offres
-                  exclusives sur les app...
+                  technologiques. Pendant deux semaines, profitez d’offres...
                 </p>
                 <a href="#" class="text-button-green underline">Voir plus</a>
               </div>
@@ -272,7 +282,7 @@
           <div class="bg-white rounded-lg shadow-md opacity-50 overflow-hidden">
             <div class="relative">
               <img
-              src="../public/assets/images/event2.jpg"
+                src="../public/assets/images/event2.jpg"
                 alt="Event"
                 class="w-full h-48 object-cover"
               />
@@ -282,8 +292,8 @@
                   Conférence Design
                 </h3>
                 <p class="text-gray-600 mb-3">
-                  A conference dedicated to modern design principles and UI/UX
-                  innovations.
+                  Une conférence dédiée aux principes du design moderne et aux
+                  innovations UI/UX.
                 </p>
                 <a href="#" class="text-button-green underline">Voir plus</a>
               </div>
@@ -294,7 +304,7 @@
           <div class="bg-white rounded-lg shadow-md opacity-50 overflow-hidden">
             <div class="relative">
               <img
-                src="/api/placeholder/400/250"
+                src="../public/assets/images/event3.jpg"
                 alt="Event"
                 class="w-full h-48 object-cover"
               />
@@ -304,8 +314,8 @@
                   Soirée Networking
                 </h3>
                 <p class="text-gray-600 mb-3">
-                  Connect with professionals and expand your network at our
-                  exclusive event.
+                  Connectez-vous avec des professionnels et développez votre
+                  réseau lors de notre événement exclusif.
                 </p>
                 <a href="#" class="text-button-green underline">Voir plus</a>
               </div>
@@ -316,68 +326,76 @@
 
       <!-- Challenges Section -->
       <section id="challenges" class="my-16">
-        <h2 class="text-3xl font-bold text-custom-dark mb-8">Challenges</h2>
+        <div class="flex items-center mb-8">
+          <img
+            src="../public/assets/elements/vector_icon.png"
+            alt="Icone Challenges"
+            class="w-17 mr-2"
+          />
+          <h2 class="text-3xl font-bold text-custom-dark">Challenges</h2>
+        </div>
         <div class="grid md:grid-cols-3 gap-8">
-          <!-- Challenge 1 -->
-          <div class="bg-white rounded-lg shadow-md overflow-hidden">
+          <!-- Challenge 1: Ultimate Repair Battle -->
+          <div class="bg-white rounded-lg shadow-md opacity-50 overflow-hidden">
             <div class="relative">
               <img
-                src="/api/placeholder/400/250"
+                src="../public/assets/images/chall1.jpg"
                 alt="Challenge"
                 class="w-full h-48 object-cover"
               />
               <div class="p-4">
                 <p class="text-sm text-gray-500 mb-1">10-20 Mar 2025</p>
                 <h3 class="text-xl font-semibold text-custom-dark mb-2">
-                  Coding Challenge
+                  Bataille Ultime de Réparation
                 </h3>
                 <p class="text-gray-600 mb-3">
-                  Test your programming skills and compete with other developers
-                  for exciting prizes.
+                  Affrontez d'autres passionnés de réparation pour remettre à
+                  neuf et restaurer des appareils endommagés...
                 </p>
                 <a href="#" class="text-button-green underline">Voir plus</a>
               </div>
             </div>
           </div>
 
-          <!-- Challenge 2 -->
+          <!-- Challenge 2: Gaming Modding Showdown -->
           <div class="bg-white rounded-lg shadow-md overflow-hidden">
             <div class="relative">
               <img
-                src="/api/placeholder/400/250"
+                src="../public/assets/images/chall2.jpg"
                 alt="Challenge"
                 class="w-full h-48 object-cover"
               />
               <div class="p-4">
                 <p class="text-sm text-gray-500 mb-1">15-30 Mar 2025</p>
                 <h3 class="text-xl font-semibold text-custom-dark mb-2">
-                  UI Design Challenge
+                  Défi de Modding Gaming
                 </h3>
                 <p class="text-gray-600 mb-3">
-                  Showcase your design skills and create innovative user
-                  interfaces.
+                  Montrez vos talents en customisation de consoles de jeux et
+                  PC. Améliorez, optimisez et concevez l'installation gaming
+                  ultime !
                 </p>
                 <a href="#" class="text-button-green underline">Voir plus</a>
               </div>
             </div>
           </div>
 
-          <!-- Challenge 3 -->
-          <div class="bg-white rounded-lg shadow-md overflow-hidden">
+          <!-- Challenge 3: Sustainable Innovation Challenge -->
+          <div class="bg-white rounded-lg shadow-md opacity-50 overflow-hidden">
             <div class="relative">
               <img
-                src="/api/placeholder/400/250"
+                src="../public/assets/images/chall3.jpg"
                 alt="Challenge"
                 class="w-full h-48 object-cover"
               />
               <div class="p-4">
                 <p class="text-sm text-gray-500 mb-1">1-15 Apr 2025</p>
                 <h3 class="text-xl font-semibold text-custom-dark mb-2">
-                  Marketing Challenge
+                  Défi d'Innovation Durable
                 </h3>
                 <p class="text-gray-600 mb-3">
-                  Develop innovative marketing strategies and present your ideas
-                  to industry experts.
+                  Imaginez des solutions innovantes pour réutiliser et donner
+                  une seconde vie aux déchets électroniques...
                 </p>
                 <a href="#" class="text-button-green underline">Voir plus</a>
               </div>
@@ -387,37 +405,52 @@
       </section>
 
       <!-- Promotions Section -->
-      <section id="promotions" class="my-16">
-        <h2 class="text-3xl font-bold text-custom-dark mb-8">Promotions</h2>
+      <section id="promotions" class="my-16 font-montserrat">
+        <div class="flex items-center mb-8">
+          <img
+            src="../public/assets/elements/vector_icon.png"
+            alt="Icone Promotions"
+            class="w-17 mr-2"
+          />
+          <h2 class="text-3xl font-bold text-custom-dark">Promotions</h2>
+        </div>
+
         <div class="grid md:grid-cols-3 gap-8">
           <!-- Product 1 -->
           <div class="bg-white rounded-lg shadow-md overflow-hidden">
             <div class="relative">
               <img
-                src="/api/placeholder/400/300"
-                alt="Product"
+                src="../public/assets/images/pc.png"
+                alt="Ordinateur Portable"
                 class="w-full h-64 object-cover"
               />
-              <div class="promo-badge">-30%</div>
-              <div class="p-4">
-                <h3 class="text-xl font-semibold text-custom-dark mb-2">
-                  Premium Laptop
-                </h3>
-                <p class="text-gray-600 mb-3">
-                  High-performance laptop for professionals.
-                </p>
-                <div class="flex space-x-3">
-                  <a
-                    href="#"
-                    class="py-2 px-4 bg-button-green text-custom-light rounded text-sm hover:bg-green-600 transition duration-300"
-                    >Ajouter au panier</a
-                  >
-                  <a
-                    href="#"
-                    class="py-2 px-4 border border-button-green text-button-green rounded text-sm hover:bg-gray-100 transition duration-300"
-                    >Détails produits</a
-                  >
-                </div>
+              <div
+                class="absolute top-2 left-2 bg-red-500 text-white text-sm font-bold px-3 py-1 rounded"
+              >
+                -30%
+              </div>
+            </div>
+            <div class="p-4">
+              <h3 class="text-xl font-semibold text-custom-dark mb-2">
+                Ordinateur Portable Premium
+              </h3>
+              <p class="text-gray-600 mb-3">
+                <span class="line-through text-gray-500">3,500 TND</span>
+                <span class="text-red-600 font-bold text-lg">2,450 TND</span>
+              </p>
+              <div class="flex space-x-3">
+                <a
+                  href="#"
+                  class="py-2 px-4 bg-button-green text-custom-light rounded text-sm hover:bg-green-600 transition duration-300"
+                >
+                  Ajouter au panier
+                </a>
+                <a
+                  href="#"
+                  class="py-2 px-4 border border-button-green text-button-green rounded text-sm hover:bg-gray-100 transition duration-300"
+                >
+                  Détails produits
+                </a>
               </div>
             </div>
           </div>
@@ -426,30 +459,37 @@
           <div class="bg-white rounded-lg shadow-md overflow-hidden">
             <div class="relative">
               <img
-                src="/api/placeholder/400/300"
-                alt="Product"
+                src="../public/assets/images/headset.png"
+                alt="Casque sans fil"
                 class="w-full h-64 object-cover"
               />
-              <div class="promo-badge">-25%</div>
-              <div class="p-4">
-                <h3 class="text-xl font-semibold text-custom-dark mb-2">
-                  Wireless Headphones
-                </h3>
-                <p class="text-gray-600 mb-3">
-                  Noise-cancelling headphones with premium sound quality.
-                </p>
-                <div class="flex space-x-3">
-                  <a
-                    href="#"
-                    class="py-2 px-4 bg-button-green text-custom-light rounded text-sm hover:bg-green-600 transition duration-300"
-                    >Ajouter au panier</a
-                  >
-                  <a
-                    href="#"
-                    class="py-2 px-4 border border-button-green text-button-green rounded text-sm hover:bg-gray-100 transition duration-300"
-                    >Détails produits</a
-                  >
-                </div>
+              <div
+                class="absolute top-2 left-2 bg-red-500 text-white text-sm font-bold px-3 py-1 rounded"
+              >
+                -25%
+              </div>
+            </div>
+            <div class="p-4">
+              <h3 class="text-xl font-semibold text-custom-dark mb-2">
+                Casque Sans Fil
+              </h3>
+              <p class="text-gray-600 mb-3">
+                <span class="line-through text-gray-500">750 TND</span>
+                <span class="text-red-600 font-bold text-lg">560 TND</span>
+              </p>
+              <div class="flex space-x-3">
+                <a
+                  href="#"
+                  class="py-2 px-4 bg-button-green text-custom-light rounded text-sm hover:bg-green-600 transition duration-300"
+                >
+                  Ajouter au panier
+                </a>
+                <a
+                  href="#"
+                  class="py-2 px-4 border border-button-green text-button-green rounded text-sm hover:bg-gray-100 transition duration-300"
+                >
+                  Détails produits
+                </a>
               </div>
             </div>
           </div>
@@ -458,30 +498,37 @@
           <div class="bg-white rounded-lg shadow-md overflow-hidden">
             <div class="relative">
               <img
-                src="/api/placeholder/400/300"
-                alt="Product"
+                src="../public/assets/images/watch.png"
+                alt="Montre intelligente"
                 class="w-full h-64 object-cover"
               />
-              <div class="promo-badge">-40%</div>
-              <div class="p-4">
-                <h3 class="text-xl font-semibold text-custom-dark mb-2">
-                  Smart Watch
-                </h3>
-                <p class="text-gray-600 mb-3">
-                  Advanced smartwatch with health tracking features.
-                </p>
-                <div class="flex space-x-3">
-                  <a
-                    href="#"
-                    class="py-2 px-4 bg-button-green text-custom-light rounded text-sm hover:bg-green-600 transition duration-300"
-                    >Ajouter au panier</a
-                  >
-                  <a
-                    href="#"
-                    class="py-2 px-4 border border-button-green text-button-green rounded text-sm hover:bg-gray-100 transition duration-300"
-                    >Détails produits</a
-                  >
-                </div>
+              <div
+                class="absolute top-2 left-2 bg-red-500 text-white text-sm font-bold px-3 py-1 rounded"
+              >
+                -40%
+              </div>
+            </div>
+            <div class="p-4">
+              <h3 class="text-xl font-semibold text-custom-dark mb-2">
+                Montre Intelligente
+              </h3>
+              <p class="text-gray-600 mb-3">
+                <span class="line-through text-gray-500">500 TND</span>
+                <span class="text-red-600 font-bold text-lg">300 TND</span>
+              </p>
+              <div class="flex space-x-3">
+                <a
+                  href="#"
+                  class="py-2 px-4 bg-button-green text-custom-light rounded text-sm hover:bg-green-600 transition duration-300"
+                >
+                  Ajouter au panier
+                </a>
+                <a
+                  href="#"
+                  class="py-2 px-4 border border-button-green text-button-green rounded text-sm hover:bg-gray-100 transition duration-300"
+                >
+                  Détails produits
+                </a>
               </div>
             </div>
           </div>
