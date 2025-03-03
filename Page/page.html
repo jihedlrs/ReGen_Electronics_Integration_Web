@@ -1,9 +1,547 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@900&family=AR+One+Sans:wght@400;700&family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Landing Page</title>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      /* Custom colors */
+      :root {
+        --primary: #20c997;
+        --primary-dark: #14a479;
+        --button-green: #28a745;
+        --text-dark: #242323;
+        --text-light: #fefefe;
+      }
+      .bg-primary {
+        background-color: var(--primary);
+      }
+      .bg-primary-dark {
+        background-color: var(--primary-dark);
+      }
+      .bg-button-green {
+        background-color: var(--button-green);
+      }
+      .border-button-green {
+        border-color: var(--button-green);
+      }
+      .text-custom-dark {
+        color: var(--text-dark);
+      }
+      .text-custom-light {
+        color: var(--text-light);
+      }
+      .text-button-green {
+        color: var(--button-green);
+      }
+
+      /* Dropdown styles */
+      .dropdown {
+        position: relative;
+        display: inline-block;
+      }
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: white;
+        min-width: 200px;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+        border-radius: 0.25rem;
+      }
+      .dropdown:hover .dropdown-content {
+        display: block;
+      }
+
+      /* Promo badge */
+      .promo-badge {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        background-color: red;
+        color: white;
+        padding: 5px 10px;
+        border-radius: 5px;
+        font-weight: bold;
+      }
+      .ar-one-sans {
+        font-family: "AR One Sans", sans-serif;
+        font-weight: 700;
+      }
+      .btn-green {
+        background-color: #28a745;
+      }
+      .hero-section {
+        position: relative;
+      }
+      .hero-content {
+        position: absolute;
+        top: 50%;
+        left: 10%;
+        transform: translateY(-50%);
+        max-width: 50%;
+      }
+    </style>
   </head>
-  <body></body>
+  <body class="flex flex-col min-h-screen">
+    <!-- Navbar -->
+    <nav class="bg-primary shadow-lg">
+      <div class="max-w-6xl mx-auto px-4">
+        <div class="flex justify-between">
+          <div class="flex space-x-4">
+            <!-- Logo -->
+            <div>
+              <a href="#" class="flex items-center py-4 px-2">
+                <img
+                  src="../public/assets/whiteLogoRegen.png"
+                  alt="ReGen Electronics Logo"
+                  class="h-20 mr-2"
+                />
+              </a>
+            </div>
+            <!-- Primary Nav -->
+            <div class="hidden md:flex items-center space-x-8">
+              <a
+                href="#"
+                class="py-4 px-2 text-custom-dark hover:text-gray-500 transition duration-300"
+                style="font-family: 'Poppins', sans-serif; font-weight: 500"
+                >Home</a
+              >
+
+              <!-- Produit Dropdown -->
+              <div class="dropdown py-4 px-2">
+                <span
+                  class="text-custom-dark hover:text-gray-500 cursor-pointer flex items-center"
+                  style="font-family: 'Poppins', sans-serif; font-weight: 500"
+                >
+                  Produit
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-4 w-4 ml-1"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                </span>
+                <div class="dropdown-content mt-4">
+                  <a
+                    href="#"
+                    class="block px-4 py-2 text-custom-dark hover:bg-gray-100"
+                    style="font-family: 'Poppins', sans-serif; font-weight: 500"
+                    >Voir Produits</a
+                  >
+                  <a
+                    href="#"
+                    class="block px-4 py-2 text-custom-dark hover:bg-gray-100"
+                    style="font-family: 'Poppins', sans-serif; font-weight: 500"
+                    >Produits en promotion</a
+                  >
+                </div>
+              </div>
+
+              <a
+                href="#"
+                class="py-4 px-2 text-custom-dark hover:text-gray-500 transition duration-300"
+                style="font-family: 'Poppins', sans-serif; font-weight: 500"
+                >Statistique</a
+              >
+
+              <!-- Calendrier Dropdown -->
+              <div class="dropdown py-4 px-2">
+                <span
+                  class="text-white bg-primary-dark hover:bg-opacity-80 px-3 py-1 rounded-md cursor-pointer flex items-center"
+                  style="font-family: 'Poppins', sans-serif; font-weight: 500"
+                >
+                  Calendrier
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-4 w-4 ml-1"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                </span>
+                <div class="dropdown-content mt-4">
+                  <a
+                    href="#"
+                    class="block px-4 py-2 text-custom-dark hover:bg-gray-100"
+                    style="font-family: 'Poppins', sans-serif; font-weight: 500"
+                    >Calendrier</a
+                  >
+                  <div class="border-b border-gray-200 my-1"></div>
+                  <a
+                    href="#evenements"
+                    class="block px-4 py-2 text-custom-dark hover:bg-gray-100"
+                    style="font-family: 'Poppins', sans-serif; font-weight: 500"
+                    >Événements</a
+                  >
+                  <a
+                    href="#challenges"
+                    class="block px-4 py-2 text-custom-dark hover:bg-gray-100"
+                    style="font-family: 'Poppins', sans-serif; font-weight: 500"
+                    >Challenges</a
+                  >
+                  <div class="border-b border-gray-200 my-1"></div>
+                  <a
+                    href="#"
+                    class="block px-4 py-2 text-custom-dark hover:bg-gray-100"
+                    style="font-family: 'Poppins', sans-serif; font-weight: 500"
+                    >Découvrir</a
+                  >
+                </div>
+              </div>
+
+              <a
+                href="#"
+                class="py-4 px-2 text-custom-dark hover:text-gray-500 transition duration-300"
+                style="font-family: 'Poppins', sans-serif; font-weight: 500"
+                >Contact</a
+              >
+            </div>
+          </div>
+
+          <!-- Secondary Nav -->
+          <div class="hidden md:flex items-center space-x-4">
+            <a
+              href="#"
+              class="py-2 px-4 bg-button-green text-custom-light rounded hover:bg-green-600 transition duration-300"
+              >Connexion</a
+            >
+            <a
+              href="#"
+              class="py-2 px-4 border bg-white border-button-green text-button-green rounded hover:bg-gray-100 transition duration-300"
+              >Inscription</a
+            >
+          </div>
+
+          <!-- Mobile menu button -->
+          <div class="md:hidden flex items-center">
+            <button class="outline-none mobile-menu-button">
+              <svg
+                class="w-6 h-6 text-custom-dark hover:text-gray-500"
+                fill="none"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path d="M4 6h16M4 12h16M4 18h16"></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <main class="flex-grow">
+      <!-- Hero Section with Full-width Image -->
+      <section class="hero-section w-full relative overflow-hidden">
+        <img
+          src="../public/assets/images/back.png"
+          alt="Hero Image"
+          class="w-full h-100 object-cover object-center"
+        />
+        <div class="hero-content text-left">
+          <h1 class="ar-one-sans text-3xl md:text-4xl lg:text-5xl mb-4">
+            Produits Informatiques Reconditionnés
+          </h1>
+          <p class="mb-6 text-gray-800 max-w-md">
+            Rendre les appareils de qualité accessibles à des prix abordables
+          </p>
+          <button
+            class="btn-green text-white px-6 py-2 rounded-lg hover:opacity-90 transition"
+          >
+            Découvrir
+          </button>
+        </div>
+      </section>
+
+      <!-- Product Grid Section -->
+      <section class="container mx-auto py-12 px-4">
+        <h2 class="text-2xl font-bold mb-8 text-center">Nos Produits</h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Product 1 -->
+          <div class="text-center flex flex-col items-center">
+            <img
+              src="../public/assets/images/pc.png"
+              alt="Laptop"
+              class="w-60 object-cover"
+            />
+            <div class="p-4">
+              <h3 class="font-semibold text-lg mb-2">Laptop Reconditionné</h3>
+              <button
+                class="btn-green text-white px-4 py-2 rounded-lg hover:opacity-90 transition w-40"
+              >
+                Acheter
+              </button>
+            </div>
+          </div>
+
+          <!-- Product 2 -->
+          <div class="text-center flex flex-col items-center">
+            <img
+              src="../public/assets/images/pc.png"
+              alt="Laptop"
+              class="w-60 object-cover"
+            />
+            <div class="p-4">
+              <h3 class="font-semibold text-lg mb-2">Laptop Reconditionné</h3>
+              <button
+                class="btn-green text-white px-4 py-2 rounded-lg hover:opacity-90 transition w-40"
+              >
+                Acheter
+              </button>
+            </div>
+          </div>
+
+          <!-- Product 3 -->
+          <div class="text-center flex flex-col items-center">
+            <img
+              src="../public/assets/images/pc.png"
+              alt="Laptop"
+              class="w-60 object-cover"
+            />
+            <div class="p-4">
+              <h3 class="font-semibold text-lg mb-2">Laptop Reconditionné</h3>
+              <button
+                class="btn-green text-white px-4 py-2 rounded-lg hover:opacity-90 transition w-40"
+              >
+                Acheter
+              </button>
+            </div>
+          </div>
+
+          <!-- Product 4 -->
+          <div class="text-center flex flex-col items-center">
+            <img
+              src="../public/assets/images/pc.png"
+              alt="Laptop"
+              class="w-60 object-cover"
+            />
+            <div class="p-4">
+              <h3 class="font-semibold text-lg mb-2">Laptop Reconditionné</h3>
+              <button
+                class="btn-green text-white px-4 py-2 rounded-lg hover:opacity-90 transition w-40"
+              >
+                Acheter
+              </button>
+            </div>
+          </div>
+
+          <!-- Product 5 -->
+          <div class="text-center flex flex-col items-center">
+            <img
+              src="../public/assets/images/pc.png"
+              alt="Laptop"
+              class="w-60 object-cover"
+            />
+            <div class="p-4">
+              <h3 class="font-semibold text-lg mb-2">Laptop Reconditionné</h3>
+              <button
+                class="btn-green text-white px-4 py-2 rounded-lg hover:opacity-90 transition w-40"
+              >
+                Acheter
+              </button>
+            </div>
+          </div>
+
+          <!-- Product 6 -->
+          <div class="text-center flex flex-col items-center">
+            <img
+              src="../public/assets/images/pc.png"
+              alt="Laptop"
+              class="w-60 object-cover"
+            />
+            <div class="p-4">
+              <h3 class="font-semibold text-lg mb-2">Laptop Reconditionné</h3>
+              <button
+                class="btn-green text-white px-4 py-2 rounded-lg hover:opacity-90 transition w-40"
+              >
+                Acheter
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+      <!-- Upper footer section -->
+      <div class="bg-primary py-8">
+        <div class="max-w-6xl mx-auto px-4">
+          <div class="flex flex-col items-center text-center">
+            <h3
+              class="text-xl font-bold text-custom-light mb-6 font-poppins"
+              style="font-family: 'Poppins', sans-serif; font-weight: 900"
+            >
+              <div>REJOIGNEZ LA COMMUNAUTÉ SHOPPING POUR OBTENIR</div>
+              <div>UNE PROMO MENSUEL</div>
+            </h3>
+            <div class="relative w-full max-w-md">
+              <input
+                type="email"
+                placeholder="Ajoutez votre email ici"
+                class="w-full py-3 px-4 pr-24 bg-white rounded-md text-gray-700 placeholder-gray-400 focus:outline-none"
+              />
+              <button
+                type="submit"
+                class="absolute right-1 top-1 bottom-1 px-3 py-2 bg-primary text-white rounded-r-md text-sm"
+              >
+                Soumettre
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Lower footer section -->
+      <div class="bg-primary-dark py-6">
+        <div class="max-w-6xl mx-auto px-4">
+          <div class="flex flex-col md:flex-row justify-between">
+            <!-- Left side -->
+            <div class="mb-6 md:mb-0">
+              <h2
+                class="text-2xl text-white mb-2"
+                style="font-family: 'Poppins', sans-serif; font-weight: 900"
+              >
+                ReGen Electronics
+              </h2>
+              <h3
+                class="text-base text-white mb-1"
+                style="font-family: 'AR One Sans', sans-serif; font-weight: 700"
+              >
+                Notre mission:
+              </h3>
+              <p
+                class="text-xs text-white"
+                style="font-family: 'AR One Sans', sans-serif; font-weight: 400"
+              >
+                Rendre les appareils de qualité accessibles à des prix
+                abordables
+              </p>
+            </div>
+
+            <!-- Right side with three columns -->
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+              <!-- Column 1 -->
+              <div>
+                <h4
+                  class="text-sm font-bold mb-3 text-black"
+                  style="font-family: 'Roboto', sans-serif"
+                >
+                  Company
+                </h4>
+                <ul
+                  class="space-y-2"
+                  style="font-family: 'Roboto', sans-serif; font-size: 13px"
+                >
+                  <li>
+                    <a href="#" class="text-white hover:underline">About</a>
+                  </li>
+                  <li>
+                    <a href="#" class="text-white hover:underline"
+                      >Contact Us</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#" class="text-white hover:underline">Support</a>
+                  </li>
+                  <li>
+                    <a href="#" class="text-white hover:underline">Careers</a>
+                  </li>
+                </ul>
+              </div>
+
+              <!-- Column 2 -->
+              <div>
+                <h4
+                  class="text-sm font-bold mb-3 text-black"
+                  style="font-family: 'Roboto', sans-serif"
+                >
+                  Fonctionnalités
+                </h4>
+                <ul
+                  class="space-y-2"
+                  style="font-family: 'Roboto', sans-serif; font-size: 13px"
+                >
+                  <li>
+                    <a href="#" class="text-white hover:underline"
+                      >Localisation</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#" class="text-white hover:underline"
+                      >Suivi des commandes</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#" class="text-white hover:underline"
+                      >Size guide</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#" class="text-white hover:underline">FAQs</a>
+                  </li>
+                </ul>
+              </div>
+
+              <!-- Column 3 -->
+              <div>
+                <h4
+                  class="text-sm font-bold mb-3 text-black"
+                  style="font-family: 'Roboto', sans-serif"
+                >
+                  Légal
+                </h4>
+                <ul
+                  class="space-y-2"
+                  style="font-family: 'Roboto', sans-serif; font-size: 13px"
+                >
+                  <li>
+                    <a href="#" class="text-white hover:underline"
+                      >Conditions générales</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#" class="text-white hover:underline"
+                      >Politique de confidentialité</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
 </html>
